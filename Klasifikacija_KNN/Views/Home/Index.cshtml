@@ -1,0 +1,49 @@
+﻿@model Klasifikacija_KNN.Models.UserPlan
+
+@{
+    ViewBag.Title = "Artimiausio kaimyno algoritmas";
+}
+
+<h2 class="ui header">Įveskite norimus plano parametrus</h2>
+@using (Html.BeginForm("CalculateDistances", "Home"))
+{
+    <div class="ui form">
+        <div class="ui fields">
+            <div class="ui field">
+                <div class="field">
+                    <label>Minutės:</label>
+                    @Html.TextBoxFor(m => m.UserMinutes, new { @placeholder = "Minutės...", @class = "ui input" })
+                </div>
+            </div>
+
+            <div class="ui field">
+                <div class="field">
+                    <label>SMS:</label>
+                    @Html.TextBoxFor(m => m.UserSms, new { @placeholder = "SMS...", @class = "ui input" })
+                </div>
+            </div>
+
+            <div class="ui field">
+                <div class="field">
+                    <label>Gigabaitai:</label>
+                    @Html.TextBoxFor(m => m.UserGb, new { @placeholder = "Gigabaitai...", @class = "ui input" })
+                </div>
+            </div>
+
+            <div class="ui field">
+                <div class="field">
+                    <label class="ui label">Atstumas:</label>
+                    <div class="ui dropdown">
+                        @Html.DropDownListFor(x => x.SelectedId, new SelectList(Model.AlgorithmList, "Value", "Text"))
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <input type="submit" class="positive ui button" value="Skaičiuoti" />
+    </div>
+
+}
+

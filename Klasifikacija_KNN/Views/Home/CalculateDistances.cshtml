@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Klasifikacija_KNN.Domain.Entities.Plan>
+
+@{
+    ViewBag.Title = "Atstumai";
+}
+
+<h2></h2>
+
+<table class="ui celled table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OperatorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Minutes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlanName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Minutes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+        </tr>
+    }
+
+</table>
