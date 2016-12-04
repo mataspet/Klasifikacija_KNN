@@ -11,6 +11,6 @@ namespace Klasifikacija_KNN.Domain.Concrete
     public class EfPlansRepository : IPlanRepository
     {
         private readonly EfDbContext _context = new EfDbContext();
-        public IEnumerable<Plan> Plans => _context.Plans;
+        public IEnumerable<Plan> Plans => _context.Plans.ToList();
     }
 }

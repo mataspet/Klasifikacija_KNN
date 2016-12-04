@@ -55,6 +55,7 @@
     <Compile Include="Concrete\DistanceCalculator.cs" />
     <Compile Include="Concrete\EfDbContext.cs" />
     <Compile Include="Concrete\EfPlansRepository.cs" />
+    <Compile Include="Concrete\PlanDBInitializer.cs" />
     <Compile Include="Entities\Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,6 +10,11 @@ namespace Klasifikacija_KNN.Domain.Concrete
 {
     public class EfDbContext : DbContext
     {
+        public EfDbContext() : base("Klasifikacija")
+        {
+                Database.SetInitializer(new PlanDbInitializer());
+        }
+
         public DbSet<Plan> Plans { get; set; }
     }
 }
