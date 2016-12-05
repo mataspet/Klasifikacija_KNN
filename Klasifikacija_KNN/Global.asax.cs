@@ -13,6 +13,7 @@ namespace Klasifikacija_KNN
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.PostStart();
         }
     }
 }
