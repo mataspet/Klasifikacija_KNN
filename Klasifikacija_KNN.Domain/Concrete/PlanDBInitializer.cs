@@ -8,7 +8,7 @@ using Klasifikacija_KNN.Domain.Entities;
 
 namespace Klasifikacija_KNN.Domain.Concrete
 {
-    public class PlanDbInitializer : DropCreateDatabaseAlways<EfDbContext>
+    public class PlanDbInitializer : CreateDatabaseIfNotExists<EfDbContext>
     {
         protected override void Seed(EfDbContext context)
         {

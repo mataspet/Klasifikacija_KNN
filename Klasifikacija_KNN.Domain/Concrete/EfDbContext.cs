@@ -16,5 +16,6 @@ namespace Klasifikacija_KNN.Domain.Concrete
         }
 
         public DbSet<Plan> Plans { get; set; }
+        public DbSet<Person> People { get; set; }
     }
 }
