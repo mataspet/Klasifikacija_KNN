@@ -12,5 +12,6 @@ namespace Klasifikacija_KNN.Domain.Concrete
     {
         private readonly EfDbContext _context = new EfDbContext();
         public IEnumerable<Plan> Plans => _context.Plans.ToList();
+        public IEnumerable<Person> People => _context.People.ToList();
     }
 }

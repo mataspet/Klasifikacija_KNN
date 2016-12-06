@@ -1,21 +1,25 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KNN classification</title>
-    <link href="~/Content/semantic.css" rel="stylesheet" type="text/css"/>
+    @Styles.Render("~/Content/semantic")
+    @Scripts.Render("~/bundles/semantic")
 </head>
 <body>
 <div class="ui secondary pointing menu">
     
-    <a class="active item" href="@Url.Action("Index", "Home")">
+    <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "") item" href="@Url.Action("Index", "Home")">
         Artimiausio kaimyno algoritmas
+    </a>
+    <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "NaiveBayes" ? "active" : "") item" href="@Url.Action("Index", "NaiveBayes")">
+        Naive Bayes
     </a>
 </div>
 <div class="ui segment">
     @RenderBody()
 </div>
-
 </body>
 </html>

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+
+<form class="ui form">
+    <div class="fields">
+        <div class="four wide field">
+            <label>Ūgis</label>
+            <input type="text" id="height" placeholder="Ūgis">
+        </div>
+        <div class="four wide field">
+            <label>Svoris</label>
+            <input type="text" id="weight" placeholder="Svoris">
+        </div>
+        <div class="four wide field">
+            <label>Pėdos dydis</label>
+            <input type="text" id="footSize" placeholder="Pėdos dydis">
+        </div>
+        <div class="two wide ui submit button">Tirti</div>
+    </div>
+</form>
+<div id="table">
+    
+</div>
+<script type="text/javascript">
+    var weight;
+    var height;
+    var footSize;
+    $("div.submit.button")
+        .click(function() {
+            weight = $("#weight").val();
+            height = $("#height").val();
+            footSize = $("#footSize").val();
+            $.post("/NaiveBayes/Result", { Weight: weight, Height: height, FootSize: footSize })
+                .done(function (result) {
+                    $("#table").html(result);
+                });
+        });
+    
+</script>

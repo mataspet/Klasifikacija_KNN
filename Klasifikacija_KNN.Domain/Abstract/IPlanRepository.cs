@@ -10,5 +10,6 @@ namespace Klasifikacija_KNN.Domain.Abstract
     public interface IPlanRepository
     {
         IEnumerable<Plan> Plans { get; }
+        IEnumerable<Person> People { get; }
     }
 }
