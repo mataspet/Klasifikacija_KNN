@@ -8,9 +8,9 @@ using Klasifikacija_KNN.Domain.Entities;
 
 namespace Klasifikacija_KNN.Algorithms.Interfaces
 {
-    public interface INaiveBayes<T, in TModel>
+    public interface INaiveBayes<in T, in TModel, out TOut>
     {
         void AddTrainingSet(IEnumerable<T> trainingSet);
-        T Decide(TModel sample);
+        IEnumerable<TOut> CalculateProbabilities(TModel sample);
     }
 }

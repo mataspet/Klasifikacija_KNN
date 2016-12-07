@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Klasifikacija_KNN.Algorithms;
 using Klasifikacija_KNN.Domain.Abstract;
+using Klasifikacija_KNN.Models.ViewModels;
 
 namespace Klasifikacija_KNN.Controllers
 {
@@ -28,9 +29,10 @@ namespace Klasifikacija_KNN.Controllers
         [HttpPost]
         public ActionResult Result(PersonSample sample)
         {
-            var result = _naiveBayes.Decide(sample);
-            TempData["gender"] = result.Gender.ToString();
-            return PartialView("Table");
+            _naiveBayes.GenerateVariables();
+            var result = _naiveBayes.CalculateProbabilities(sample).OrderByDescending(x => x.Probability).ToList();
+            
+            return PartialView("Table", new TableViewModel() { Results = result, Winner = result.FirstOrDefault(x => x.Probability == result.Max(y => y.Probability))});
         }
     }
 }

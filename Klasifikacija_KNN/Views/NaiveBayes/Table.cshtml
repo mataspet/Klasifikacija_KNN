@@ -1,28 +1,37 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Table";
 }
+
+@using Klasifikacija_KNN.Domain.Extensions
+@model Klasifikacija_KNN.Models.ViewModels.TableViewModel
 
 <h3 class="ui dividing header">
     Rezultatai
 </h3>
 
+<h3 class="ui header">
+    Duomenys klasifikuoti kaip: @Model.Winner.Gender.ToLocalisedString()
+</h3>
+
 <table class="ui celled padded table">
     <thead>
-        <tr>
-            <th>Lytis</th>
-            <th>Tikimybė</th>
-        </tr>
+    <tr>
+        <th>Lytis</th>
+        <th>Tikimybė</th>
+    </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                <h2 class="ui center aligned header">@TempData["gender"]</h2>
-            </td>
-            <td class="single line">
+        @foreach (var gender in Model.Results)
+        {
+            <tr>
+                <td>
+                    <h2 class="ui center aligned header">@gender.Gender.ToLocalisedString()</h2>
+                </td>
+                <td class="single line">
+                    <h3>@gender.Probability</h3>
+                </td>
                 
-            </td>
-        </tr>
+            </tr>
+        }
     </tbody>
 </table>
-
