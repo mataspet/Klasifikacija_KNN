@@ -4,46 +4,75 @@
     ViewBag.Title = "Artimiausio kaimyno algoritmas";
 }
 
-<h2 class="ui header">Įveskite norimus plano parametrus</h2>
+@*<h2 class="ui header">Įveskite norimus plano parametrus</h2>*@
 @using (Html.BeginForm("CalculateDistances", "Home"))
 {
-    <div class="ui form">
-        <div class="ui fields">
-            <div class="ui field">
-                <div class="field">
-                    <label>Minutės:</label>
-                    @Html.TextBoxFor(m => m.UserMinutes, new { @placeholder = "Minutės...", @class = "ui input" })
-                </div>
-            </div>
 
-            <div class="ui field">
-                <div class="field">
-                    <label>SMS:</label>
-                    @Html.TextBoxFor(m => m.UserSms, new { @placeholder = "SMS...", @class = "ui input" })
-                </div>
-            </div>
-
-            <div class="ui field">
-                <div class="field">
-                    <label>Gigabaitai:</label>
-                    @Html.TextBoxFor(m => m.UserGb, new { @placeholder = "Gigabaitai...", @class = "ui input" })
-                </div>
-            </div>
-
-            <div class="ui field">
-                <div class="field">
-                    <label class="ui label">Atstumas:</label>
-                    <div class="ui dropdown">
-                        @Html.DropDownListFor(x => x.SelectedId, new SelectList(Model.AlgorithmList, "Value", "Text"))
-                    </div>
-
-                </div>
+    @*<form class="ui form">
+        <h4 class="ui dividing header">Įveskite norimus plano parametrus</h4>
+        <div class="field">
+            <div class="field">
+                <label>Minutės:</label>
+                @Html.TextBoxFor(m => m.UserMinutes, new { @placeholder = "Minutės...", @class = "ui input" })
             </div>
         </div>
-
-
+        <div class="field">
+            <label>SMS:</label>
+            @Html.TextBoxFor(m => m.UserSms, new { @placeholder = "SMS...", @class = "ui input" })
+        </div>
+        <div class="field">
+            <label>Gigabaitai:</label>
+            @Html.TextBoxFor(m => m.UserGb, new { @placeholder = "Gigabaitai..."})
+        </div>
+        <div class="field">
+            <label>Algoritmas:</label>
+            <select class="ui fluid dropdown">
+                @Html.DropDownListFor(x => x.SelectedId, new SelectList(Model.AlgorithmList, "Value", "Text"), new { @class = "ui dropdown" })
+            </select>
+        </div>
         <input type="submit" class="positive ui button" value="Skaičiuoti" />
+    </form>*@
+
+
+
+    <div class="ui grid">
+        <div class="five wide centered column">
+            <div class="ui form">
+                <h4 class="ui dividing header">Norimo plano parametrai</h4>
+                <div class="ui field">
+                    <div class="field">
+                        <label>Minutės:</label>
+                        @Html.TextBoxFor(m => m.UserMinutes, new { @placeholder = "Minutės...", @class = "ui input" })
+                    </div>
+                </div>
+
+                <div class="ui field">
+                    <div class="field">
+                        <label>SMS:</label>
+                        @Html.TextBoxFor(m => m.UserSms, new { @placeholder = "SMS...", @class = "ui input" })
+                    </div>
+                </div>
+
+                <div class="ui field">
+                    <div class="field">
+                        <label>Gigabaitai:</label>
+                        @Html.TextBoxFor(m => m.UserGb, new { @placeholder = "Gigabaitai...", @class = "ui input" })
+                    </div>
+                </div>
+
+                <div class="ui field">
+                    <div class="field">
+                        <label>Atstumas:</label>
+                        @Html.DropDownListFor(x => x.SelectedId, new SelectList(Model.AlgorithmList, "Value", "Text"), new { @class = "dropdown" })
+                    </div>
+                </div>
+
+
+                <input type="submit" class="positive ui button" value="Skaičiuoti" />
+            </div>
+        </div>
     </div>
+    
 
 }
 
