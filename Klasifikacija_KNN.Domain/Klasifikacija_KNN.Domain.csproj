@@ -58,6 +58,7 @@
     <Compile Include="Concrete\PlanDBInitializer.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Plan.cs" />
+    <Compile Include="Extensions\GenderExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

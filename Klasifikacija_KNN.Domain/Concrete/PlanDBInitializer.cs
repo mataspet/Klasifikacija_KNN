@@ -12,22 +12,62 @@ namespace Klasifikacija_KNN.Domain.Concrete
     {
         protected override void Seed(EfDbContext context)
         {
-            context.Plans.Add(new Plan()
+            context.People.Add(new Person()
             {
-                Gb = 2,
-                Minutes = 300,
-                Sms = 1000,
-                OperatorName = "Omnitel",
-                PlanName = "Lėtiems"
+                Gender = Gender.Male,
+                Height = 1.83,
+                Weight = 81.6,
+                FootSize = 45
+            });
+            context.People.Add(new Person()
+            {
+                Gender = Gender.Male,
+                Height = 1.8,
+                Weight = 86.2,
+                FootSize = 44
+            });
+            context.People.Add(new Person()
+            {
+                Gender = Gender.Male,
+                Height = 1.7,
+                Weight = 77.1,
+                FootSize = 45
+            });
+            context.People.Add(new Person()
+            {
+                Gender = Gender.Male,
+                Height = 1.8,
+                Weight = 74.8,
+                FootSize = 43
             });
 
-            context.Plans.Add(new Plan()
+            context.People.Add(new Person()
             {
-                Gb = 3,
-                Minutes = 400,
-                Sms = 2000,
-                OperatorName = "Omnitel",
-                PlanName = "Greitiems"
+                Gender = Gender.Female,
+                Height = 1.52,
+                Weight = 45.4,
+                FootSize = 37
+            });
+            context.People.Add(new Person()
+            {
+                Gender = Gender.Female,
+                Height = 1.67,
+                Weight = 68,
+                FootSize = 39
+            });
+            context.People.Add(new Person()
+            {
+                Gender = Gender.Female,
+                Height = 1.65,
+                Weight = 60,
+                FootSize = 38
+            });
+            context.People.Add(new Person()
+            {
+                Gender = Gender.Female,
+                Height = 1.75,
+                Weight = 68,
+                FootSize = 40
             });
             base.Seed(context);
         }
