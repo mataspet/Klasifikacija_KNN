@@ -12,11 +12,17 @@ namespace Klasifikacija_KNN.Domain.Entities
     public class Plan
     {
         public int PlanId { get; set; }
+        [DisplayName("Operatorius")]
         public string OperatorName { get; set; }
+        [DisplayName("Planas")]
         public string PlanName { get; set; }
+        [DisplayName("Minutės")]
         public int Minutes { get; set; }
+        [DisplayName("Sms")]
         public int Sms { get; set; }
+        [DisplayName("Gigabaitai")]
         public double Gb { get; set; }
+        [DisplayName("Atstumas")]
         public double Distance { get; set; }
     }
 }

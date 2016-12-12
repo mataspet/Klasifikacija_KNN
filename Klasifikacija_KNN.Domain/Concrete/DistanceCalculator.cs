@@ -27,8 +27,8 @@ namespace Klasifikacija_KNN.Domain.Concrete
         {
             foreach (var plan in plans)
             {
-                plan.Distance = (userPlan.ElementAt(0) - plan.Minutes) + (userPlan.ElementAt(1) - plan.Sms) +
-                                (userPlan.ElementAt(2) - plan.Gb);
+                plan.Distance = Math.Abs(userPlan.ElementAt(0) - plan.Minutes) + Math.Abs(userPlan.ElementAt(1) - plan.Sms) +
+                                Math.Abs(userPlan.ElementAt(2) - plan.Gb);
             }
 
             return plans.OrderBy(p => p.Distance);
@@ -41,9 +41,9 @@ namespace Klasifikacija_KNN.Domain.Concrete
             {
                 plan.Distance = new List<double>
                 {
-                    userPlan.ElementAt(0) - plan.Minutes,
-                    userPlan.ElementAt(1) - plan.Sms,
-                    userPlan.ElementAt(2) - plan.Gb,
+                    Math.Abs(userPlan.ElementAt(0) - plan.Minutes),
+                    Math.Abs(userPlan.ElementAt(1) - plan.Sms),
+                    Math.Abs(userPlan.ElementAt(2) - plan.Gb),
                 }.Max();
             }
             return plans.OrderBy(p => p.Distance);

@@ -42,11 +42,14 @@ namespace Klasifikacija_KNN.Controllers
             switch (userPlan.SelectedId)
             {
                 case 0:
+                    ViewBag.DistanceName = "Euklido atstumo rezultatai";
                     return View(_distanceCalculator.EuclideanDistance(_planRepository.Plans, userPlanParams));
                 case 1:
+                    ViewBag.DistanceName = "Manheteno atstumo rezultatai";
                     return View(_distanceCalculator.ManhattanDistance(_planRepository.Plans, userPlanParams));
                 case 2:
-                    return View(_distanceCalculator.ManhattanDistance(_planRepository.Plans, userPlanParams));
+                    ViewBag.DistanceName = "Čebyševo atstumo rezultatai";
+                    return View(_distanceCalculator.ChebyshevDistance(_planRepository.Plans, userPlanParams));
                 default:
                     return View(_distanceCalculator.EuclideanDistance(_planRepository.Plans, userPlanParams));
             }
